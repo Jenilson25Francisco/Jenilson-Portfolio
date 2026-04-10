@@ -21,7 +21,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt" className={cn(roboto.variable, "font-sans", "dark")}>
+    <html
+      lang="pt"
+      className={cn(roboto.variable, "font-sans", "dark antialiased")}
+    >
       <body>
         <Header />
         {children}
