@@ -11,7 +11,7 @@ export function Header() {
             src="/logo.png"
             width={84}
             height={32}
-            alt="Jenilson FRancisco"
+            alt="Jenilson Francisco"
           />
         </Link>
 
