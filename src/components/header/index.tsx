@@ -1,28 +1,21 @@
-import { HomeIcon } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
+import { NavItems } from "../NavItems";
+import Image from "next/image";
 
 export function Header() {
   return (
-    <header className="absolute top-0 w-full z-10 h-24 flex items-center justify-center">
-      <div className="flex items-center justify-between">
-        <Link href="/">
+    <header className="w-full z-10 h-24 flex items-center justify-between px-5 md:max-w-[1200px] mx-auto">
+      <Link href="/#">
+        <p className="font-bold text-4xl">
           <Image
-            src="/logo.png"
-            width={84}
-            height={32}
+            src="/JenilsonFrancisco.png"
             alt="Jenilson Francisco"
+            width={175}
+            height={44}
           />
-        </Link>
-
-        <nav className="flex items-center gap-4 sm:gap-2">
-          <Link href="/">
-            <HomeIcon />
-            <span>Home</span>
-          </Link>
-          <Link href="/"></Link>
-        </nav>
-      </div>
+        </p>
+      </Link>
+      <NavItems />
     </header>
   );
 }

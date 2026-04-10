@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import "./globals.css";
 import { Header } from "@/components/header";
+import "./globals.css";
+import { cn } from "@/lib/utils";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -20,12 +21,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt" className={roboto.variable}>
-      <body className="bg-zinc-950 text-zinc-50 antialiased">
-        <main className="px-5 md:max-w-[1200px] mx-auto">
-          <Header />
-          {children}
-        </main>
+    <html lang="pt" className={cn(roboto.variable, "font-sans", "dark")}>
+      <body>
+        <Header />
+        {children}
       </body>
     </html>
   );
