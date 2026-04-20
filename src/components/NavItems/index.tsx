@@ -1,6 +1,6 @@
 "use client";
 
-import { HomeIcon, MenuIcon, X } from "lucide-react";
+import { MenuIcon, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "../ui/button";
@@ -12,11 +12,15 @@ export function NavItems() {
     setOpenMenu(!openMenu);
   }
 
+  function handelNavigateToContact() {
+    setOpenMenu(false);
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
     <>
-      <nav className="hidden sm:flex items-center gap-2 sm:gap-8">
+      <nav className="hidden sm:flex items-center sm:gap-4">
         <Link href="/" className="flex items-center gap-1 justify-center">
-          <HomeIcon />
           <span className="font-semibold text-sm">Home</span>
         </Link>
         <Link href="/about" className="font-semibold text-sm">
@@ -40,15 +44,34 @@ export function NavItems() {
             : "fixed left-[-100%] top-0 p-10 ease-in duration-500"
         }
       >
-        <div className="flex w-full items-center justify-end relative">
+        <div className="flex w-full items-center relative justify-end">
           <Button
             onClick={handleNav}
             variant="secondary"
-            className="cursor-pointer absolute top-2 right-2"
+            className="cursor-pointer absolute right-2 top-2"
           >
             <X className="size-4" />
           </Button>
         </div>
+
+        <nav className="flex flex-col gap-4 mt-12 p-5">
+          <Link href="/" className="font-semibold text-sm">
+            {/** biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+            <li onClick={() => setOpenMenu(false)} className="cursor-pointer">
+              Home
+            </li>
+          </Link>
+          <Link href="/about" className="font-semibold text-sm">
+            Sobre
+          </Link>
+          <Link href="/projects" className="font-semibold text-sm">
+            Projetos
+          </Link>
+
+          <Button onClick={handelNavigateToContact} className="">
+            Contatos
+          </Button>
+        </nav>
       </div>
     </>
   );
