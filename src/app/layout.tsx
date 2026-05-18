@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { Header } from "@/components/header";
+// @ts-ignore: global CSS import handled by Next.js
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const roboto = Roboto({
+const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
-  variable: "--font-roboto",
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt"
-      className={cn(roboto.variable, "font-sans", "dark antialiased")}
+      className={cn(poppins.variable, "font-sans dark antialiased")}
     >
       <body>
         <Header />

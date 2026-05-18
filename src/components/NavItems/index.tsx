@@ -14,7 +14,7 @@ export function NavItems() {
 
   function handelNavigateToContact() {
     setOpenMenu(false);
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("contact")?.scrollTo({});
   }
 
   return (
@@ -61,16 +61,17 @@ export function NavItems() {
               Home
             </li>
           </Link>
-          <Link href="/about" className="font-semibold text-sm">
+          <Link href="/about" className="font-semibold text-sm cursor-pointer">
             Sobre
           </Link>
-          <Link href="/projects" className="font-semibold text-sm">
+          <Link
+            href="/projects"
+            className="font-semibold text-sm cursor-pointer"
+          >
             Projetos
           </Link>
 
-          <Button onClick={handelNavigateToContact} className="">
-            Contatos
-          </Button>
+          <Button className="">Contatos</Button>
         </nav>
       </div>
     </>
