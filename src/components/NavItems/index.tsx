@@ -20,8 +20,8 @@ export function NavItems() {
   return (
     <>
       <nav className="hidden sm:flex items-center sm:gap-4">
-        <Link href="/" className="flex items-center gap-1 justify-center">
-          <span className="font-semibold text-sm">Home</span>
+        <Link href="/" className="font-semibold text-sm">
+          Home
         </Link>
         <Link href="/about" className="font-semibold text-sm">
           Sobre
@@ -70,8 +70,6 @@ export function NavItems() {
           >
             Projetos
           </Link>
-
-          <Button className="">Contatos</Button>
         </nav>
       </div>
     </>
